@@ -1,0 +1,363 @@
+/*
+1-flex box
+2-animation
+3-after&before
+------------
+
+*/
+
+
+
+:root{
+ --main-color:#131633;
+ --alt-color:#3da5f4;
+ --link-color:#85a2ba;
+ --font-size: 16px;
+}
+header , section ,footer{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 25px 0px;
+    margin-top: 50px;
+
+}
+body{
+    background-color: var(--main-color);
+}
+
+
+p{
+    line-height: 30px;
+}
+button{
+    box-sizing: border-box;
+    text-align: center;
+    transition: 0.3s ease all;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+ul{
+    padding: 0;
+
+    list-style: none;
+}
+li{
+    list-style: none;
+    box-sizing: border-box;
+
+}
+a{
+    text-decoration: none !important;
+}
+input ,textarea{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    border-radius: 0px !important;
+    font-size: 17px;
+    border: 1px solid #ddd;
+    outline: none;
+}
+::before,::after{
+    position: absolute;
+    content: "";
+}
+
+
+
+/*toggle hide ,display sidenav*/
+
+#toggle-nav:checked ~ .sidenav{
+    left: -250px;
+    transition: 0.5 ease-in-out;
+    -webkit-transition: 0.5 ease-in-out;
+    -moz-transition: 0.3 ease-in-out;
+    -ms-transition: 0.3 ease-in-out;
+    -o-transition: 0.3 ease-in-out;
+}
+#toggle-nav:checked ~ .main-content{
+    margin-left: 0px;
+    transition: 0.5 ease-in-out;
+    -webkit-transition: 0.5 ease-in-out;
+    -moz-transition: 0.3 ease-in-out;
+    -ms-transition: 0.3 ease-in-out;
+    -o-transition: 0.3 ease-in-out;
+}
+#toggle-nav:checked ~ .main-content .header{
+    width: 100%;
+    transition: 0.5 ease-in-out;
+    -webkit-transition: 0.5 ease-in-out;
+    -moz-transition: 0.3 ease-in-out;
+    -ms-transition: 0.3 ease-in-out;
+    -o-transition: 0.3 ease-in-out;
+}
+
+/*start css*/
+.logo img{
+    height: auto;
+    width: 60px;
+   
+}
+/*sidenav*/
+.sidenav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: var(--main-color);
+    border: 1px solid var(--main-color);
+    overflow-y: scroll;
+    
+}
+.sidenav::-webkit-scrollbar{
+    width: 5px;
+    background-color: #fff;
+}
+.sidenav::-webkit-scrollbar-thumb{
+    background-color: #6f6e71;
+}
+.sidenav::-webkit-scrollbar-track{
+    background-color: var(--main-color);
+}
+.sidenav .logo{
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding: 12px 0px;
+}
+.sidenav .sidemenue {
+    
+    margin-top: 15PX;
+    background-color: transparent;
+}
+.sidenav .sidemenue .item{
+    width: 100%;
+    position: relative;
+    margin: 7px 0px;
+    padding: 10px;
+}
+
+.sidenav .sidemenue .item:hover{
+    background-color: #0c0c0c;
+}
+.sidenav .sidemenue .item .active{
+    color: var(--link-color);
+}
+.sidenav .sidemenue a{
+    display: block;
+    color: #f6f6f6f6;
+    font-size:var(--font-size) ;
+    letter-spacing: 0.6px;
+}
+.sidenav .sidemenue :hover{
+    color: var(--link-color);
+    transition: 0.3 ease-in-out;
+    -webkit-transition: 0.3 ease-in-out;
+    -moz-transition: 0.3 ease-in-out;
+    -ms-transition: 0.3 ease-in-out;
+    -o-transition: 0.3 ease-in-out;
+    
+}
+.sidenav .sidemenue .item a svg{
+    font-size: 12px;
+  }
+.sidenav .sidemenue a span{
+    margin-left: 16px;
+}
+.sidenav .sidemenue .item a .fa-chevron-down{
+    float:right;
+    font-size: 12px;
+    margin-top: 5px;
+
+}
+.sidenav .sidemenue a span::first-letter{
+    text-transform: uppercase;
+
+}
+
+
+.sidenav .sidemenue .sub-menue{
+    background: transparent;
+    padding-left: 40px;
+    display: none;
+}
+.sidenav .sidemenue .sub-menue u{
+    margin: 7px;
+    width: 100%;
+    position: relative;
+}
+/*end navside*/
+
+/*start main*/
+.main-content{
+    margin-left: 250px;
+    background-color: var(--main-color);
+    height: 100%;
+    padding: 0px 10px 10px 10px ;
+    
+}
+.main-content header{
+   display: flex;
+   width: 100%;
+   justify-content: space-between;
+   padding: 10px;
+   height: 60px;
+   margin-top: 0px;
+
+
+}
+.main-content .left-header{
+    display:flex;
+    justify-content: space-between;
+}
+
+.main-content .left-header label svg{
+    color: #ccc;
+    margin: 10px;
+    font-size: 20px;
+    
+}
+
+.main-content .left-header .search{
+    display:flex;
+    width: 100%;
+    justify-content: center;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 30px;
+
+}
+.main-content .left-header .search input{
+    justify-content: center;
+    background-color: transparent;
+    border: 0;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 30px;
+    color: white;
+}
+.main-content .left-header .search button{
+    justify-content: center;
+    background-color:transparent;
+    color: #ccc;
+    font-size: 20px;
+    border: 0;
+}
+.main-content .right-header{
+    margin-right: 30px;
+    margin-top: 10px;
+    width:15%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+
+}
+.main-content .right-header svg{
+    color: #ccc;
+
+}
+.main-content .right-header .account{
+    width: 32px;
+
+}
+.main-content .right-header .message{
+    position: absolute;
+    cursor: pointer;
+
+}
+.main-content .right-header .message .message-box{
+    position:absolute;
+    width: 210px;
+    height: auto;
+    background: var(--main-color);
+    border: 1px solid var(--main-color);
+    box-sizing: border-box;
+    text-align: left;
+    left: -210px;
+    top: 20px;
+    border-radius: 10%;
+    border-top-right-radius: 2%;
+    padding: 5px;
+    visibility: hidden; 
+    z-index: 999;
+
+}
+.main-content .right-header .message .msg-text{
+    width: 75%;
+    height: 40px;
+    margin:5px;
+    padding: 2px;
+    overflow: hidden;
+    color: white;
+    border-radius: 10px;
+    padding: 5;
+    background-color: #6f6e71;
+
+} 
+.main-content .right-header .message .msg-text p{
+    font-size: 10px;
+    text-align: start;
+    height: 30px;
+
+
+} 
+.main-content .right-header .message .msg-text h6{
+    font-size: 9px;
+    font-weight: bold;
+    margin-bottom: 0;
+    text-align: start;
+    
+
+} 
+.main-content .right-header .message .mess-list:hover{
+    background-color: #222840;
+    
+    
+
+} 
+
+.main-content .right-header .message:hover .message-box{
+    
+        visibility: visible;
+        transition: 0.3s ease-in-out;
+        -webkit-transition:  0.3s ease-in-out;
+        -moz-transition: 0.3s ease-in-out ;
+        -ms-transition: 0.3s ease-in-out;
+        -o-transition:  0.3s ease-in-out;
+    
+}
+.main-content .right-header .profile{
+    position: absolute;
+    
+}
+.main-content .right-header .profile .auth{
+    position: absolute;
+    top: 23px;
+    right: 26px;
+    width: 100px;
+    border-radius: 10%;
+    border-top-right-radius: 1%;
+    background: var(--main-color);
+    visibility: hidden;
+    z-index: 999;
+    
+}
+.main-content .right-header .profile .auth svg{
+    color: #ccc;
+
+}
+.main-content .right-header .profile .item a{
+    color: #fff;
+}
+.main-content .right-header .profile:hover .auth{
+    visibility: visible;
+   
+    
+}
+.main-content .right-header .profile .item:hover{
+    background: #222840;
+}
+/*end main*/
